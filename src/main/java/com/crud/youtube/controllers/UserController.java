@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.crud.youtube.entities.User;
 import com.crud.youtube.repositories.UserRepository;
 import com.crud.youtube.repositories.UserRequest;
 
@@ -16,7 +17,7 @@ public class UserController {
   @Autowired
   private UserRepository userRepository;
   public ResponseEntity create(@RequestBody UserRequest userRequest){
-    User = user = new User(userRequest);
+    User user = new User(userRequest);
     userRepository.save(user);
 
     return ResponseEntity.ok( "salvo");
